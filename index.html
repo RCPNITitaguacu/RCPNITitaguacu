@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartório Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cartório Online</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#information">Informações</a></li>
+            <li><a href="#documents">Documentos Necessários</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container" id="home">
+    <h2>Bem-vindo ao Cartório Online</h2>
+    <p>Seu portal de serviços cartoriais, onde você encontra todas as informações e serviços necessários de forma rápida e fácil.</p>
+</div>
+
+<div class="container" id="services">
+    <h2>Serviços</h2>
+    <ul>
+        <li>Registro de Nascimento</li>
+        <li>Casamento Civil</li>
+        <li>Registro de Óbito</li>
+        <li>Autenticação de Documentos</li>
+        <li>Reconhecimento de Firma</li>
+    </ul>
+</div>
+
+<div class="container" id="information">
+    <h2>Informações</h2>
+    <p>Nosso cartório funciona de segunda a sexta, das 9h às 17h. Estamos localizados no centro da cidade, facilitando o acesso de todos os nossos clientes.</p>
+</div>
+
+<div class="container" id="documents">
+    <h2>Documentos Necessários</h2>
+    <p>Confira a lista de documentos necessários para cada serviço:</p>
+    <ul>
+        <li><strong>Registro de Nascimento:</strong> Certidão de Nascimento dos pais, documento de identidade dos pais, comprovante de residência.</li>
+        <li><strong>Casamento Civil:</strong> Certidão de Nascimento, documento de identidade, comprovante de residência, certidão de casamento anterior (se aplicável).</li>
+        <li><strong>Registro de Óbito:</strong> Certidão de Nascimento do falecido, documento de identidade do falecido, declaração de óbito fornecida pelo hospital.</li>
+        <li><strong>Autenticação de Documentos:</strong> Documento original e cópia.</li>
+        <li><strong>Reconhecimento de Firma:</strong> Documento original e presença do signatário.</li>
+    </ul>
+</div>
+
+<div class="container" id="contact">
+    <h2>Contato</h2>
+    <p>Entre em contato conosco para mais informações ou agendar um atendimento:</p>
+    <form>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="message">Mensagem:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Cartório Online. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
