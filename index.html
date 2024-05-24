@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart�rio Online</title>
+    <title>Cartório Online</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,8 +15,12 @@
         header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 10px 0;
-            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         nav ul {
             list-style-type: none;
@@ -31,90 +35,247 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
         }
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 100px auto 20px auto; /* Ajuste a margem superior */
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
         }
         footer {
             background-color: #2c3e50;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
+            padding: 15px 0;
+            position: relative;
             bottom: 0;
+            width: 100%;
+        }
+        .services, .info, .documents {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .services div, .info div, .documents div {
+            flex: 0 0 30%;
+            background: #e7e7e7;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .services div:hover, .info div:hover, .documents div:hover {
+            transform: translateY(-5px);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+        .coat-of-arms {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .coat-of-arms img {
+            max-width: 100px;
+            height: auto;
+        }
+        .service-description {
+            display: none;
+            margin-top: 10px;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .show-description {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .show-description:hover {
+            background-color: #ffcc00;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Cart�rio Online</h1>
+    <h1>Cartório Online</h1>
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Servi�os</a></li>
-            <li><a href="#information">Informa��es</a></li>
-            <li><a href="#documents">Documentos Necess�rios</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#information">Informações</a></li>
+            <li><a href="#documents">Documentos Necessários</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
 </header>
 
 <div class="container" id="home">
-    <h2>Bem-vindo ao Cart�rio Online</h2>
-    <p>Seu portal de servi�os cartoriais, onde voc� encontra todas as informa��es e servi�os necess�rios de forma r�pida e f�cil.</p>
+    <h2>Bem-vindo ao Cartório Online</h2>
+    <p>Seu portal de serviços cartoriais, onde você encontra todas as informações e serviços necessários de forma rápida e fácil.</p>
+    <div class="coat-of-arms">
+        <img src="https://www.gov.br/planalto/pt-br/conheca-a-presidencia/acervo/simbolos-nacionais/brasao-da-republica/brasaoversaooficial.jpeg" alt="Brasão do Brasil">
+    </div>
 </div>
 
 <div class="container" id="services">
-    <h2>Servi�os</h2>
-    <ul>
-        <li>Registro de Nascimento</li>
-        <li>Casamento Civil</li>
-        <li>Registro de �bito</li>
-        <li>Autentica��o de Documentos</li>
-        <li>Reconhecimento de Firma</li>
-    </ul>
+    <h2>Serviços</h2>
+    <div class="services">
+        <div>
+            <h3>Registro de Nascimento</h3>
+            <p>Documentação necessária e processo de registro de nascimento.</p>
+            <button class="show-description">Mais Informações</button>
+            <div class="service-description">
+                <p>O registro de nascimento é um ato formal que reconhece legalmente a existência de uma pessoa. Para realizar o registro, é necessário apresentar a certidão de nascimento dos pais, um documento de identidade dos pais e um comprovante de residência.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Casamento Civil</h3>
+            <p>Saiba como proceder para registrar seu casamento civil.</p>
+            <button class="show-description">Mais Informações</button>
+            <div class="service-description">
+                <p>Para registrar seu casamento civil, você precisará da certidão de nascimento, documento de identidade, comprovante de residência e, se aplicável, a certidão de casamento anterior. O processo inclui a publicação de proclamas e a realização da cerimônia civil.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Registro de Óbito</h3>
+            <p>Informações sobre como realizar o registro de óbito.</p>
+            <button class="show-description">Mais Informações</button>
+            <div class="service-description">
+                <p>O registro de óbito deve ser realizado com a certidão de nascimento do falecido, um documento de identidade do falecido e a declaração de óbito fornecida pelo hospital. Esse registro é essencial para questões legais e para a realização de funerais.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Autenticação de Documentos</h3>
+            <p>Serviço de autenticação de documentos oficiais.</p>
+            <button class="show-description">Mais Informações</button>
+            <div class="service-description">
+                <p>A autenticação de documentos garante que a cópia de um documento é fiel ao original. Para isso, é necessário apresentar o documento original e a cópia a ser autenticada.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Reconhecimento de Firma</h3>
+            <p>Procedimentos para o reconhecimento de firma.</p>
+            <button class="show-description">Mais Informações</button>
+            <div class="service-description">
+                <p>O reconhecimento de firma é a confirmação de que a assinatura em um documento é autêntica. O signatário deve comparecer pessoalmente com o documento original para que a assinatura seja reconhecida.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container" id="information">
-    <h2>Informa��es</h2>
-    <p>Nosso cart�rio funciona de segunda a sexta, das 9h �s 17h. Estamos localizados no centro da cidade, facilitando o acesso de todos os nossos clientes.</p>
+    <h2>Informações</h2>
+    <div class="info">
+        <div>
+            <h3>Horário de Funcionamento</h3>
+            <p>Nosso cartório funciona de segunda a sexta, das 9h às 17h.</p>
+        </div>
+        <div>
+            <h3>Localização</h3>
+            <p>Estamos localizados no centro da cidade, facilitando o acesso de todos os nossos clientes.</p>
+        </div>
+        <div>
+            <h3>Contato Telefônico</h3>
+            <p>Entre em contato conosco pelo telefone (11) 1234-5678.</p>
+        </div>
+    </div>
 </div>
 
 <div class="container" id="documents">
-    <h2>Documentos Necess�rios</h2>
-    <p>Confira a lista de documentos necess�rios para cada servi�o:</p>
-    <ul>
-        <li><strong>Registro de Nascimento:</strong> Certid�o de Nascimento dos pais, documento de identidade dos pais, comprovante de resid�ncia.</li>
-        <li><strong>Casamento Civil:</strong> Certid�o de Nascimento, documento de identidade, comprovante de resid�ncia, certid�o de casamento anterior (se aplic�vel).</li>
-        <li><strong>Registro de �bito:</strong> Certid�o de Nascimento do falecido, documento de identidade do falecido, declara��o de �bito fornecida pelo hospital.</li>
-        <li><strong>Autentica��o de Documentos:</strong> Documento original e c�pia.</li>
-        <li><strong>Reconhecimento de Firma:</strong> Documento original e presen�a do signat�rio.</li>
-    </ul>
+    <h2>Documentos Necessários</h2>
+    <div class="documents">
+        <div>
+            <h3>Registro de Nascimento</h3>
+            <p>Certidão de Nascimento dos pais, documento de identidade dos pais, comprovante de residência.</p>
+        </div>
+        <div>
+            <h3>Casamento Civil</h3>
+            <p>Certidão de Nascimento, documento de identidade, comprovante de residência, certidão de casamento anterior (se aplicável).</p>
+        </div>
+        <div>
+            <h3>Registro de Óbito</h3>
+            <p>Certidão de Nascimento do falecido, documento de identidade do falecido, declaração de óbito fornecida pelo hospital.</p>
+        </div>
+        <div>
+            <h3>Autenticação de Documentos</h3>
+            <p>Documento original e cópia.</p>
+        </div>
+        <div>
+            <h3>Reconhecimento de Firma</h3>
+            <p>Documento original e presença do signatário.</p>
+        </div>
+    </div>
 </div>
 
 <div class="container" id="contact">
     <h2>Contato</h2>
-    <p>Entre em contato conosco para mais informa��es ou agendar um atendimento:</p>
+    <p>Entre em contato conosco para mais informações ou agendar um atendimento:</p>
     <form>
-        <label for="name">Nome:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="message">Mensagem:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
         <input type="submit" value="Enviar">
     </form>
 </div>
 
 <footer>
-    <p>&copy; 2024 Cart�rio Online. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Cartório Online. Todos os direitos reservados.</p>
 </footer>
+
+<script>
+    document.querySelectorAll('.show-description').forEach(button => {
+        button.addEventListener('click', () => {
+            const description = button.nextElementSibling;
+            if (description.style.display === 'none' || description.style.display === '') {
+                description.style.display = 'block';
+                button.textContent = 'Menos Informações';
+            } else {
+                description.style.display = 'none';
+                button.textContent = 'Mais Informações';
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
